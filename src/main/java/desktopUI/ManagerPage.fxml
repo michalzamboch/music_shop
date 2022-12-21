@@ -1,0 +1,312 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="desktopUI.ViewController">
+   <children>
+      <TabPane prefHeight="600.0" prefWidth="800.0" tabClosingPolicy="UNAVAILABLE">
+         <tabs>
+            <Tab text="Prodej">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="580.0" prefWidth="800.0">
+                     <children>
+                        <BorderPane layoutX="25.0" layoutY="25.0" prefHeight="580.0" prefWidth="800.0" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="20.0">
+                           <top>
+                              <HBox alignment="TOP_CENTER" prefHeight="40.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                                 <children>
+                                    <TextField fx:id="searchBarRecord" prefHeight="25.0" prefWidth="455.0" promptText="Hledat">
+                                       <HBox.margin>
+                                          <Insets right="10.0" />
+                                       </HBox.margin>
+                                    </TextField>
+                                    <Button mnemonicParsing="false" onAction="#searchRecord" text="Hledat">
+                                       <HBox.margin>
+                                          <Insets left="10.0" />
+                                       </HBox.margin>
+                                    </Button>
+                                 </children>
+                                 <opaqueInsets>
+                                    <Insets />
+                                 </opaqueInsets>
+                                 <BorderPane.margin>
+                                    <Insets />
+                                 </BorderPane.margin>
+                              </HBox>
+                           </top>
+                           <bottom>
+                              <HBox maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="25.0" prefWidth="765.0" BorderPane.alignment="CENTER">
+                                 <children>
+                                    <Button mnemonicParsing="false" onAction="#sellRecord" text="Prodat" />
+                                    <Button mnemonicParsing="false" onAction="#loadSellRecords" text="Načist">
+                                       <HBox.margin>
+                                          <Insets left="10.0" />
+                                       </HBox.margin>
+                                    </Button>
+                                 </children>
+                                 <BorderPane.margin>
+                                    <Insets top="10.0" />
+                                 </BorderPane.margin>
+                              </HBox>
+                           </bottom>
+                           <left>
+                              <ListView fx:id="listOfRecords" prefHeight="438.0" prefWidth="370.0" BorderPane.alignment="CENTER" />
+                           </left>
+                           <right>
+                              <ListView fx:id="listOfCustomers" prefHeight="438.0" prefWidth="370.0" BorderPane.alignment="CENTER" />
+                           </right>
+                        </BorderPane>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+            <Tab text="Nové zboží">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <BorderPane prefHeight="580.0" prefWidth="800.0" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="20.0">
+                           <center>
+                              <GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="333.0" prefWidth="401.0" BorderPane.alignment="TOP_LEFT">
+                                <columnConstraints>
+                                  <ColumnConstraints halignment="LEFT" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                  <ColumnConstraints hgrow="ALWAYS" minWidth="10.0" prefWidth="100.0" />
+                                </columnConstraints>
+                                <rowConstraints>
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                </rowConstraints>
+                                 <children>
+                                    <Label text="Umělec" />
+                                    <Label text="Jméno nahrávky" GridPane.rowIndex="2" />
+                                    <Label text="Cena" GridPane.rowIndex="3" />
+                                    <Label text="Počet" GridPane.rowIndex="4" />
+                                    <Label text="Typ nosiče" GridPane.rowIndex="5" />
+                                    <Label text="Žánr" GridPane.rowIndex="7" />
+                                    <TextField fx:id="artistTxtF" GridPane.columnIndex="1" />
+                                    <TextField fx:id="recordNameTxtF" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                    <TextField fx:id="priceTxtF" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                                    <TextField fx:id="countTxtF" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                                    <TextField fx:id="carrierTypeTxtF" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                                    <TextField fx:id="genreTxtF" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+                                    <TextField fx:id="releaseYearTxtF" GridPane.columnIndex="1" GridPane.rowIndex="9" />
+                                    <Label text="Rok vydání" GridPane.rowIndex="9" />
+                                    <Label text="Delka stopáže" GridPane.rowIndex="10" />
+                                    <TextField fx:id="lengthTxtF" GridPane.columnIndex="1" GridPane.rowIndex="10" />
+                                    <Label text="Vydavatel" GridPane.rowIndex="1" />
+                                    <Label text="Typ nahrávky" GridPane.rowIndex="6" />
+                                    <Label text="Popis" GridPane.rowIndex="8" />
+                                    <TextField fx:id="recordCompanyTxtF" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                    <TextField fx:id="recordTypeTxtF" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                                    <TextField fx:id="decriptionTxtF" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+                                 </children>
+                              </GridPane>
+                           </center>
+                           <bottom>
+                              <Button mnemonicParsing="false" onAction="#writeRecord" text="Write" BorderPane.alignment="TOP_LEFT" />
+                           </bottom>
+                           <top>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Nové zboží" BorderPane.alignment="TOP_LEFT">
+                                 <BorderPane.margin>
+                                    <Insets />
+                                 </BorderPane.margin>
+                                 <font>
+                                    <Font name="System Bold" size="25.0" />
+                                 </font>
+                              </Text>
+                           </top>
+                        </BorderPane>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+            <Tab text="Přidat zaměstnance">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <BorderPane prefHeight="570.0" prefWidth="800.0" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="20.0">
+                           <top>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Přidat zaměstnance" textAlignment="CENTER" BorderPane.alignment="TOP_LEFT">
+                                 <font>
+                                    <Font name="System Bold" size="25.0" />
+                                 </font>
+                                 <BorderPane.margin>
+                                    <Insets />
+                                 </BorderPane.margin>
+                              </Text>
+                           </top>
+                           <center>
+                              <GridPane hgap="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="261.0" prefWidth="354.0" BorderPane.alignment="TOP_LEFT">
+                                 <columnConstraints>
+                                    <ColumnConstraints halignment="LEFT" maxWidth="140.0" minWidth="10.0" prefWidth="110.0" />
+                                    <ColumnConstraints halignment="LEFT" hgrow="NEVER" maxWidth="225.0" minWidth="10.0" prefWidth="176.0" />
+                                 </columnConstraints>
+                                 <rowConstraints>
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="0.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                 </rowConstraints>
+                                 <BorderPane.margin>
+                                    <Insets top="20.0" />
+                                 </BorderPane.margin>
+                                 <children>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Jméno" />
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Příjmení" GridPane.rowIndex="1" />
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Username" GridPane.rowIndex="2" />
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Heslo" GridPane.rowIndex="3" />
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Zopakujte heslo" GridPane.rowIndex="4" />
+                                    <TextField fx:id="firstNameEmTxtF" prefWidth="0.0" GridPane.columnIndex="1" />
+                                    <TextField fx:id="lastNameEmTxtF" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                    <TextField fx:id="usernameEmTxtF" prefWidth="155.0" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" GridPane.rowIndex="2" />
+                                    <TextField fx:id="emailEmTxtF" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                                    <PasswordField fx:id="passEmTxtF" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                                    <PasswordField fx:id="repeatPassEmTxtF" prefWidth="162.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="E-mail" GridPane.rowIndex="5" />
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Peněžní ohodnocení" GridPane.rowIndex="6" />
+                                    <TextField fx:id="wageEmTxtF" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                                 </children>
+                              </GridPane>
+                           </center>
+                           <bottom>
+                              <Button alignment="CENTER" mnemonicParsing="false" onAction="#registerEmployee" text="Register" BorderPane.alignment="TOP_LEFT" />
+                           </bottom>
+                        </BorderPane>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+            <Tab text="Zaměstnanci">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <BorderPane prefHeight="540.0" prefWidth="800.0" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="20.0">
+                           <top>
+                              <HBox alignment="TOP_CENTER" prefHeight="40.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                                 <children>
+                                    <TextField fx:id="searchBarEmployees" prefHeight="25.0" prefWidth="455.0" promptText="Hledat">
+                                       <HBox.margin>
+                                          <Insets right="10.0" />
+                                       </HBox.margin>
+                                    </TextField>
+                                    <Button mnemonicParsing="false" onAction="#registerEmployee" text="Hledat">
+                                       <HBox.margin>
+                                          <Insets left="10.0" />
+                                       </HBox.margin>
+                                    </Button>
+                                 </children>
+                                 <opaqueInsets>
+                                    <Insets />
+                                 </opaqueInsets>
+                                 <BorderPane.margin>
+                                    <Insets />
+                                 </BorderPane.margin>
+                              </HBox>
+                           </top>
+                           <center>
+                              <ListView fx:id="allEmployees" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+                           </center>
+                           <bottom>
+                              <HBox maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="25.0" prefWidth="768.0" BorderPane.alignment="CENTER">
+                                 <children>
+                                    <Button mnemonicParsing="false" onAction="#deleteEmployee" prefHeight="25.0" prefWidth="60.0" text="Smazat">
+                                       <HBox.margin>
+                                          <Insets />
+                                       </HBox.margin>
+                                    </Button>
+                                    <Button mnemonicParsing="false" onAction="#loadEmployees" text="Načist">
+                                       <HBox.margin>
+                                          <Insets left="10.0" />
+                                       </HBox.margin>
+                                    </Button>
+                                 </children>
+                                 <BorderPane.margin>
+                                    <Insets top="10.0" />
+                                 </BorderPane.margin>
+                              </HBox>
+                           </bottom>
+                        </BorderPane>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+            <Tab text="Zákaznici">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <BorderPane prefHeight="540.0" prefWidth="800.0" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="20.0">
+                           <top>
+                              <HBox alignment="TOP_CENTER" prefHeight="40.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                                 <children>
+                                    <TextField fx:id="searchBarCustomer" prefHeight="25.0" prefWidth="455.0" promptText="Hledat">
+                                       <HBox.margin>
+                                          <Insets right="10.0" />
+                                       </HBox.margin>
+                                    </TextField>
+                                    <Button mnemonicParsing="false" onAction="#searchCustomer" text="Hledat">
+                                       <HBox.margin>
+                                          <Insets left="10.0" />
+                                       </HBox.margin>
+                                    </Button>
+                                 </children>
+                                 <opaqueInsets>
+                                    <Insets />
+                                 </opaqueInsets>
+                                 <BorderPane.margin>
+                                    <Insets />
+                                 </BorderPane.margin>
+                              </HBox>
+                           </top>
+                           <center>
+                              <ListView fx:id="allCustomers" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+                           </center>
+                           <bottom>
+                              <HBox maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="25.0" prefWidth="768.0" BorderPane.alignment="CENTER">
+                                 <children>
+                                    <Button mnemonicParsing="false" onAction="#deleteCustomer" prefHeight="25.0" prefWidth="60.0" text="Smazat" />
+                                    <Button mnemonicParsing="false" onAction="#loadCustomers" text="Načist">
+                                       <HBox.margin>
+                                          <Insets left="10.0" />
+                                       </HBox.margin>
+                                    </Button>
+                                 </children>
+                                 <BorderPane.margin>
+                                    <Insets top="10.0" />
+                                 </BorderPane.margin>
+                              </HBox>
+                           </bottom>
+                        </BorderPane>
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
+         </tabs>
+      </TabPane>
+   </children>
+</AnchorPane>

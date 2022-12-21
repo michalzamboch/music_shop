@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="desktopUI.ViewController">
+   <children>
+      <TabPane prefHeight="600.0" prefWidth="800.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab text="Log in">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <BorderPane prefHeight="570.0" prefWidth="800.0">
+                           <top>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Evidence Nahrávek 1.0" textAlignment="CENTER" BorderPane.alignment="CENTER">
+                                 <font>
+                                    <Font name="System Bold" size="49.0" />
+                                 </font>
+                                 <BorderPane.margin>
+                                    <Insets top="100.0" />
+                                 </BorderPane.margin>
+                              </Text>
+                           </top>
+                           <center>
+                              <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                                 <children>
+                                    <GridPane alignment="CENTER_RIGHT" hgap="10.0" layoutX="279.0" layoutY="92.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="110.0" prefWidth="243.0">
+                                       <columnConstraints>
+                                          <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" maxWidth="130.0" minWidth="10.0" prefWidth="50.0" />
+                                          <ColumnConstraints hgrow="SOMETIMES" maxWidth="175.0" minWidth="10.0" prefWidth="220.0" />
+                                       </columnConstraints>
+                                       <rowConstraints>
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                       </rowConstraints>
+                                       <children>
+                                          <Button mnemonicParsing="false" onAction="#login" text="Log in" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                          <Label text="Username" />
+                                          <Label text="Password" GridPane.rowIndex="1" />
+                                          <TextField fx:id="loginTxtFLog" GridPane.columnIndex="1" />
+                                          <PasswordField fx:id="passwordTxtFLog" prefWidth="172.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                       </children>
+                                    </GridPane>
+                                 </children>
+                              </AnchorPane>
+                           </center>
+                        </BorderPane>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+          <Tab text="Register">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <BorderPane prefHeight="570.0" prefWidth="800.0" AnchorPane.bottomAnchor="30.0" AnchorPane.leftAnchor="30.0" AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="30.0">
+                           <top>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Registrace" textAlignment="CENTER" BorderPane.alignment="TOP_LEFT">
+                                 <font>
+                                    <Font name="System Bold" size="25.0" />
+                                 </font>
+                                 <BorderPane.margin>
+                                    <Insets />
+                                 </BorderPane.margin>
+                              </Text>
+                           </top>
+                           <center>
+                              <GridPane hgap="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="231.0" prefWidth="299.0" BorderPane.alignment="TOP_LEFT">
+                                <columnConstraints>
+                                  <ColumnConstraints halignment="RIGHT" maxWidth="128.0" minWidth="10.0" prefWidth="101.0" />
+                                  <ColumnConstraints halignment="LEFT" hgrow="NEVER" maxWidth="225.0" minWidth="10.0" prefWidth="185.0" />
+                                </columnConstraints>
+                                <rowConstraints>
+                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="0.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                </rowConstraints>
+                                 <BorderPane.margin>
+                                    <Insets top="20.0" />
+                                 </BorderPane.margin>
+                                 <children>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Jméno" />
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Příjmení" GridPane.rowIndex="1" />
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Heslo" GridPane.rowIndex="3" />
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Zopakujte heslo" GridPane.rowIndex="4" />
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="E-mail" GridPane.rowIndex="5" />
+                                    <TextField fx:id="firstNameTxtFRe" GridPane.columnIndex="1" />
+                                    <TextField fx:id="lastNameTxtFRe" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                    <TextField fx:id="emailTxtFRe" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                                    <Button alignment="CENTER" mnemonicParsing="false" onAction="#register" text="Register" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                                    <PasswordField fx:id="passFRe" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                                    <PasswordField fx:id="repeatPassFRe" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                                    <TextField fx:id="usernameTxtFRe" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Uživatelské jméno" GridPane.rowIndex="2" />
+                                 </children>
+                              </GridPane>
+                           </center>
+                        </BorderPane>
+                     </children></AnchorPane>
+            </content>
+          </Tab>
+            <Tab text="Info">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <BorderPane prefHeight="570.0" prefWidth="800.0" AnchorPane.bottomAnchor="30.0" AnchorPane.leftAnchor="30.0" AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="30.0">
+                           <top>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Informace o programu" textAlignment="CENTER" BorderPane.alignment="TOP_LEFT">
+                                 <font>
+                                    <Font name="System Bold" size="25.0" />
+                                 </font>
+                                 <BorderPane.margin>
+                                    <Insets />
+                                 </BorderPane.margin>
+                              </Text>
+                           </top>
+                           <center>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Evidence nahrávek 1.0 vznikl jako semestrální projekt v rámci bakálářského&#10;studia na VŠB-TUO v druhém ročníku 2021/2022 zimního semestru.&#10;&#10;Informační systém byl vytvořen pro evidenci hudebních a jiných audio nahrávek pro malý&#10;soukromý obchod. Tato digitalizace evidence nahrávek umožní zjednodušení práci v obchodu a &#10;práce se zbožím. Dále umožní nový druh prodeje nahrávek, a to pouze v digitální podobě&#10;bez fyzického média. Systém bude nejen sloužit jako evidence pro funkci obchodu samotného,&#10;ale také pro přiblížení obchodní nabídky zákazníkům a objednávat tak nahrávky z pohodlí domova.&#10;&#10;Autor: Michal Žamboch&#10;E-mail: michal.zamboch.st@vsb.cz&#10;Rok: 2021" BorderPane.alignment="TOP_LEFT">
+                                 <BorderPane.margin>
+                                    <Insets top="20.0" />
+                                 </BorderPane.margin>
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Text>
+                           </center>
+                        </BorderPane>
+                     </children></AnchorPane>
+              </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+   </children>
+</AnchorPane>
